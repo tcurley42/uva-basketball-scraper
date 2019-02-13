@@ -1,8 +1,20 @@
-class Game
-  attr_accessor :home_team, :away_team, :id, :score, :outcome, :date
+class UvaBasketball::Game
+  attr_accessor :team, :opponent, :team_url, :score, :outcome, :date, :time
+  @@all = []
 
   def initialize(attributes_hash)
-    attributes_hash.each {|attr, val| send("{#attr}=", val)}
+    attributes_hash.each {|attr, val| send("#{attr}=", val)}
+    @@all << self
   end
+
+  def display
+    puts "#{opponent}".colorize(:blue)
+    puts "  date: ".colorize(:light_blue) + "#{date}" unless date.nil?
+    puts "  time: ".colorize(:light_blue) + "#{time}" unless time.nil?
+    puts "  outcome: ".colorize(:light_blue) + "#{outcome}" unless outcome.nil?
+    puts "  score: ".colorize(:light_blue) + "#{score}" unless score.nil?
+    puts "----------------------".colorize(:green)
+  end
+
 
 end
