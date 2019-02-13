@@ -32,6 +32,7 @@ class UvaBasketball::Team
     @@all << self
   end
 
+  # Display team info
   def display_info
     puts "#{name.upcase} #{mascot.upcase}".colorize(:blue)
     puts "  rank: ".colorize(:light_blue) + "#{rank}"
@@ -39,17 +40,20 @@ class UvaBasketball::Team
     puts "  conference rank: ".colorize(:light_blue) + "#{conference_rank}"
   end
 
+  # Display all games on the schedule
   def display_schedule
     games.each {|game|
       game.display
     }
   end
 
+  # Display all players on the roster
   def display_roster
     roster.each {|player|
       player.display
     }
   end
+
   # Load a team, their schedule, and roster based on base_url, team_id and URL
   # constants
   def self.load_team(base_url, team_id)
@@ -66,6 +70,7 @@ class UvaBasketball::Team
 
   end
 
+  # Load schedule and team details from the URL
   def self.load_schedule(url)
     doc = Nokogiri::HTML(open(url))
 
@@ -85,6 +90,7 @@ class UvaBasketball::Team
     # Load the schedule of all games
     schedule = doc.css(CSS_SCHEDULE)
 
+    # Generate the games
     schedule.each {|game|
       game_hash = {
         opponent: game.css(CSS_GAME_INFO).text,
@@ -102,6 +108,7 @@ class UvaBasketball::Team
     schedule_hash
   end
 
+  # Load the roster from the url
   def self.load_roster(url)
     doc = Nokogiri::HTML(open(url))
 
@@ -109,6 +116,7 @@ class UvaBasketball::Team
 
     player_list = doc.css(CSS_ROSTER_TABLE)
 
+    # Generate the players
     players = player_list.collect {|player|
       attrs = player.css(CSS_PLAYER_ROW)
 
