@@ -47,10 +47,22 @@ class UvaBasketball::Team
     }
   end
 
+  def list_schedule
+    games.each.with_index(1) {|game, index|
+      puts "#{index}. #{game.opponent}"
+    }
+  end
+
   # Display all players on the roster
   def display_roster
     roster.each {|player|
       player.display
+    }
+  end
+
+  def list_roster
+    roster.each.with_index(1) {|player, index|
+      puts "#{index}. #{player.name}"
     }
   end
 

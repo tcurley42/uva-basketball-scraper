@@ -8,13 +8,12 @@ class UvaBasketball::Game
   end
 
   def display
-    puts "#{opponent}".colorize(:blue)
+    puts "#{opponent}".colorize(:light_green)
     puts "  date: ".colorize(:light_blue) + "#{date}" unless date.nil? || date.empty?
     puts "  time: ".colorize(:light_blue) + "#{time}" unless time.nil? || time.empty?
     puts "  outcome: ".colorize(:light_blue) + "#{outcome}" unless outcome.nil? || outcome.empty?
     puts "  score: ".colorize(:light_blue) + "#{score}" unless score.nil? || score.empty?
     puts "----------------------".colorize(:green)
   end
-
 
 end

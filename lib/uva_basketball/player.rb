@@ -8,7 +8,7 @@ class UvaBasketball::Player
 
 
   def display
-    puts "#{name.upcase}".colorize(:blue)
+    puts "#{name.upcase}".colorize(:light_green)
     puts "  first name:".colorize(:light_blue) + " #{firstname}"
     puts "  last name:".colorize(:light_blue) + " #{lastname}"
     puts "  number:".colorize(:light_blue) + " #{number}"
