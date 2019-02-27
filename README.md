@@ -1,8 +1,7 @@
 # UvaBasketball
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/uva_basketball`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows you to view the UVA Basketball schedule and roster without ever
+opening a browser.
 
 ## Installation
 
@@ -22,7 +21,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run this gem from the command line after installation, simply type
+`uva_basketball` to initiate the program. If you have not installed the gem, run
+`bin/uva_basketball`. Follow the directions from the menu. The list view
+provides minimal information with the option to select a player or game to view
+more details on. The details view provides all details of all players or games.
 
 ## Development
 
@@ -32,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/uva_basketball. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tcurley42/uva_basketball. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
